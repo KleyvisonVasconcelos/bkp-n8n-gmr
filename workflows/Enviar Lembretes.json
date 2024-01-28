@@ -1,0 +1,720 @@
+{
+  "active": true,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "data hora agora",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "30 min antes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "data hora agora": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "não é cancelado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "não é cancelado?": {
+      "main": [
+        [
+          {
+            "node": "enviar mensagem 2h antes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "enviar mensagem 2h antes": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets2": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "não é cancelado?1": {
+      "main": [
+        [
+          {
+            "node": "enviar mensagem 30m",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "enviar mensagem 30m": {
+      "main": [
+        [
+          {
+            "node": "Gmail1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "data hora agora1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "30 min antes": {
+      "main": [
+        [
+          {
+            "node": "data hora agora1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "não é cancelado?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-05-30T01:57:22.913Z",
+  "id": "3",
+  "name": "Enviar Lembretes",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours"
+            },
+            {
+              "field": "hours",
+              "triggerAtMinute": 30
+            }
+          ]
+        }
+      },
+      "id": "9d340958-7b45-43bb-85cb-9948bb4c4364",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        40,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI",
+          "mode": "list",
+          "cachedResultName": "Agendamentos Calendly - GMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Agendamentos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Lembrete 2h antes",
+              "lookupValue": "={{ $json['data-hora-agora'] }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "935ec5f3-fa2d-44a0-be8e-14818f9041b2",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        680,
+        380
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": " gustavomagalhaes.digitalocean@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "value": "={{ $json.timestamp }}",
+        "dataPropertyName": "data-hora-agora",
+        "custom": true,
+        "toFormat": "DD/MM/YYYY HH:mm",
+        "options": {
+          "fromTimezone": "America/Sao_Paulo"
+        }
+      },
+      "id": "c17c9da1-ca16-4524-b50c-dd77cba74a8e",
+      "name": "data hora agora",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        420,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json['Cancelado em'] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "3cc86cf8-f103-43c8-b660-7cf29786754a",
+      "name": "não é cancelado?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        920,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"não é cancelado?\"].json[\"ID BC\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=*{{$node[\"não é cancelado?\"].json[\"Nome\"].split(\" \")[0]}}*, tudo bem?\n\nNossa reunião é daqui 2 horas ⏱️.\n\n🤝 Contamos com a sua presença pontual e engajada, mas fique tranquilo, vamos te avisar um pouco antes.\n\nTe enviaremos o link da reunião aqui pelo WhatsApp."
+            }
+          ]
+        }
+      },
+      "name": "enviar mensagem 2h antes",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        380
+      ],
+      "id": "f9d7c1ce-3789-4fa4-976e-9473baeff3d9",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "maxTries": 5,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI",
+          "mode": "list",
+          "cachedResultName": "Agendamentos Calendly - GMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Agendamentos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit#gid=0"
+        },
+        "columnToMatchOn": "ID",
+        "valueToMatchOn": "={{ $node['não é cancelado?'].json.ID }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "Check 2h",
+              "fieldValue": "✅"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "61b9e0bd-ea31-4dd7-9ba4-a6fe56798539",
+      "name": "Google Sheets1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1700,
+        380
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": " gustavomagalhaes.digitalocean@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $node['não é cancelado?'].json.Email }}",
+        "subject": "Reunião com GMR Mídias",
+        "message": "={{$node[\"não é cancelado?\"].json[\"Nome\"].split(\" \")[0]}}, tudo bem?\n\n⏱️ Nossa reunião é daqui 2 horas.\n\n🤝 Contamos com a sua presença pontual e engajada, mas fique tranquilo, vamos te avisar um pouco antes.\nTe enviaremos o link da reunião lá no WhatsApp.\n\nAtt; GMR Mídias",
+        "options": {}
+      },
+      "id": "d4c4e7f0-9cb7-4963-ad1e-3d15548b2f53",
+      "name": "Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        1460,
+        380
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "8",
+          "name": "gmrmidias@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI",
+          "mode": "list",
+          "cachedResultName": "Agendamentos Calendly - GMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Agendamentos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Data",
+              "lookupValue": "={{ $json['data-hora-30m'].slice(0,10) }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "41bfaa0c-bc32-42b5-848c-b6640bf29d0b",
+      "name": "Google Sheets2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        680,
+        660
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": " gustavomagalhaes.digitalocean@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json['Cancelado em'] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "3e523059-cc45-4930-bd38-3dd11c685d76",
+      "name": "não é cancelado?1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI",
+          "mode": "list",
+          "cachedResultName": "Agendamentos Calendly - GMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Agendamentos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit#gid=0"
+        },
+        "columnToMatchOn": "ID",
+        "valueToMatchOn": "={{ $node['não é cancelado?1'].json.ID }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "Check 30m",
+              "fieldValue": "✅"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c5f9c0b0-73e7-495e-9e42-18bbc5e2018a",
+      "name": "Google Sheets3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1920,
+        660
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": " gustavomagalhaes.digitalocean@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $node['não é cancelado?1'].json.Email }}",
+        "subject": "Reunião com GMR Mídias",
+        "message": "={{$node[\"não é cancelado?1\"].json[\"Nome\"].split(\" \")[0]}}, tudo bem?\n\n⏱️ Nossa reunião é daqui a 30 minutos.\n\n🤝 Vou te encaminhar o link da reunião em nosso WhatsApp.\n(Caso não tenha recebido nenhuma mensagem via WhastApp, por favor entrar em contato no 55 37 98840-1553)\n\nAtt; GMR Mídias",
+        "options": {}
+      },
+      "id": "b54e21b8-be3e-47ea-a7dd-a96fcd83ac2f",
+      "name": "Gmail1",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        1680,
+        660
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "8",
+          "name": "gmrmidias@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"não é cancelado?1\"].json[\"ID BC\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=*{{$node[\"não é cancelado?1\"].json[\"Nome\"].split(\" \")[0]}}*, tudo bem?\n\nNossa reunião é daqui a 30 minutos ⏱️.\n\nDaqui a pouco te encaminho o link da reunião."
+            }
+          ]
+        }
+      },
+      "name": "enviar mensagem 30m",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        660
+      ],
+      "id": "b4aa99f3-25f5-4281-b945-d6998bc63e08",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "maxTries": 5,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "action": "calculate",
+        "value": "={{ $json.timestamp }}",
+        "duration": 30,
+        "timeUnit": "minutes",
+        "dataPropertyName": "data-hora-30m",
+        "options": {}
+      },
+      "id": "6733402d-8c24-40c0-adcf-3948b56d3879",
+      "name": "30 min antes",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        260,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "value": "={{ $json['data-hora-30m'] }}",
+        "dataPropertyName": "data-hora-30m",
+        "custom": true,
+        "toFormat": "DD/MM/YYYY HH:mm",
+        "options": {
+          "fromTimezone": "America/Sao_Paulo"
+        }
+      },
+      "id": "b0f9a8af-3a58-425d-bd33-ce139f29f359",
+      "name": "data hora agora1",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        460,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json['Hora Início'] }}",
+              "value2": "={{ $('data hora agora1').item.json['data-hora-30m'].slice(11) }}"
+            }
+          ]
+        }
+      },
+      "id": "003e54ea-7535-4c00-ac93-3d23adc6cf22",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        900,
+        660
+      ]
+    }
+  ],
+  "pinData": {
+    "data hora agora": [
+      {
+        "json": {
+          "timestamp": "2023-06-12T11:00:18.866-03:00",
+          "Readable date": "June 5th 2023, 2:35:18 am",
+          "Readable time": "2:35:18 am",
+          "Day of week": "Monday",
+          "Year": "2023",
+          "Month": "June",
+          "Day of month": "05",
+          "Hour": "02",
+          "Minute": "35",
+          "Second": "18",
+          "Timezone": "-03 -03:00",
+          "data-hora-agora": "12/07/2023 11:00"
+        }
+      }
+    ],
+    "Schedule Trigger": [
+      {
+        "json": {
+          "timestamp": "2023-07-12T11:00:00.098-03:00",
+          "Readable date": "July 12th 2023, 11:17:00 am",
+          "Readable time": "11:17:00 am",
+          "Day of week": "Wednesday",
+          "Year": "2023",
+          "Month": "July",
+          "Day of month": "12",
+          "Hour": "11",
+          "Minute": "17",
+          "Second": "00",
+          "Timezone": "-03 -03:00"
+        }
+      }
+    ],
+    "Google Sheets2": [
+      {
+        "json": {
+          "row_number": 61,
+          "ID": "0d58f3ce-d58a-44b9-8987-bf5496c51c6c",
+          "ID BC": 201334542,
+          "Nome": "Lucio .",
+          "Email": "lucio.junior.mkt@hotmail.com",
+          "WhatsApp": "+554192171774",
+          "Criado em": "",
+          "Data": "12/07/2023",
+          "Hora Início": "11:30",
+          "Lembrete 2h antes": "12/07/2023 16:00",
+          "Check 2h": "",
+          "Check 30m": "",
+          "Cancelado": true,
+          "Cancelado em": "2023-07-08T15:35:29-03:00"
+        }
+      },
+      {
+        "json": {
+          "row_number": 242,
+          "ID": "0a9b2086-fced-40e4-89de-ac7beb63e991",
+          "ID BC": 221054856,
+          "Nome": "Andresa .",
+          "Email": "andresatrdgs18@gmail.com",
+          "WhatsApp": "+553488107824",
+          "Criado em": "",
+          "Data": "12/07/2023",
+          "Hora Início": "11:30",
+          "Lembrete 2h antes": "12/07/2023 10:00",
+          "Check 2h": "✅",
+          "Check 30m": "",
+          "Cancelado": "",
+          "Cancelado em": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 243,
+          "ID": "910263dc-529d-48d8-b821-3724091edc6f",
+          "ID BC": 221067426,
+          "Nome": "Ricardo .",
+          "Email": "ricardopereiradacosta21@gmail.com",
+          "WhatsApp": "+554691313762",
+          "Criado em": "",
+          "Data": "12/07/2023",
+          "Hora Início": "11:00",
+          "Lembrete 2h antes": "12/07/2023 09:00",
+          "Check 2h": "✅",
+          "Check 30m": "",
+          "Cancelado": "",
+          "Cancelado em": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 244,
+          "ID": "17c55d65-591b-4353-8acb-a12dbf45e25b",
+          "ID BC": 221078641,
+          "Nome": "Maykow .",
+          "Email": "maykow.alexandre@icloud.com",
+          "WhatsApp": "+558381518234",
+          "Criado em": "",
+          "Data": "12/07/2023",
+          "Hora Início": "11:30",
+          "Lembrete 2h antes": "12/07/2023 08:30",
+          "Check 2h": "✅",
+          "Check 30m": "",
+          "Cancelado": "",
+          "Cancelado em": ""
+        }
+      }
+    ]
+  },
+  "settings": {
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": false,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2023-07-21T12:31:44.000Z",
+  "versionId": "0f9bb18c-14db-4ec5-bbb0-f7e4e4de5430"
+}
