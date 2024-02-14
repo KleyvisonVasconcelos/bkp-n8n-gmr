@@ -178,11 +178,6 @@
             "node": "Data início1",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Monday.com",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -867,7 +862,7 @@
   "settings": {},
   "staticData": {
     "node:Calendly Trigger1": {
-      "webhookId": 4248136
+      "webhookId": 4582816
     },
     "node:Calendly Trigger": {
       "webhookId": 3901913
@@ -875,6 +870,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2023-09-18T14:31:46.000Z",
-  "versionId": "d778d555-c248-4c2f-9ccd-79cfc6b36214"
+  "updatedAt": "2024-02-14T16:56:22.000Z",
+  "versionId": "b1c7d639-89d1-4835-aedc-a84fd21f0c9a"
 }
