@@ -185,6 +185,7 @@
   },
   "createdAt": "2023-05-26T03:59:09.444Z",
   "id": "2",
+  "meta": null,
   "name": "recebendo dados calendly",
   "nodes": [
     {
@@ -861,15 +862,13 @@
   },
   "settings": {},
   "staticData": {
-    "node:Calendly Trigger1": {
-      "webhookId": 4582816
-    },
+    "node:Calendly Trigger1": {},
     "node:Calendly Trigger": {
       "webhookId": 3901913
     }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-02-14T16:56:22.000Z",
+  "updatedAt": "2024-02-26T15:27:05.000Z",
   "versionId": "b1c7d639-89d1-4835-aedc-a84fd21f0c9a"
 }
