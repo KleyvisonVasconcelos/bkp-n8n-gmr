@@ -328,6 +328,7 @@
   },
   "createdAt": "2023-05-22T15:00:21.998Z",
   "id": "1",
+  "meta": null,
   "name": "recebendo dados do typeform",
   "nodes": [
     {
@@ -1248,12 +1249,10 @@
   },
   "settings": {},
   "staticData": {
-    "node:Typeform Trigger": {
-      "webhookId": "n8n-z7brenscz9c"
-    }
+    "node:Typeform Trigger": {}
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2023-10-09T16:25:38.000Z",
+  "updatedAt": "2024-02-26T15:27:05.000Z",
   "versionId": "79ee55d7-7127-4f6c-8a48-556bb371c75e"
 }
