@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Cadastrando na Audiência": {
       "main": [
@@ -1255,12 +1255,10 @@
   },
   "settings": {},
   "staticData": {
-    "node:Typeform Trigger": {
-      "webhookId": "n8n-drwjkp3vail"
-    }
+    "node:Typeform Trigger": {}
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-02-28T14:47:37.000Z",
+  "updatedAt": "2024-02-28T20:29:47.000Z",
   "versionId": "4c8aee62-e155-4eb5-b3c7-cf48b1df20eb"
 }
