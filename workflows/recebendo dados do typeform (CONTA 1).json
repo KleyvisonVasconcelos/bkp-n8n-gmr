@@ -1,0 +1,1266 @@
+{
+  "active": true,
+  "connections": {
+    "Cadastrando na Audiência": {
+      "main": [
+        [
+          {
+            "node": "Inserir/atualizar na planilha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
+      "main": [
+        [
+          {
+            "node": "Nome e telefone para validar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inserir/atualizar na planilha": {
+      "main": [
+        [
+          {
+            "node": "5m depois",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "buscando na plahilha": {
+      "main": [
+        [
+          {
+            "node": "filtrando data/hora",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agendou?": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "enviar mensagem 5m depois",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "ligação zenvia1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "24h depois",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "buscando na plahilha1": {
+      "main": [
+        [
+          {
+            "node": "agendou?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agendou?1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "enviar mensagem 1h depois",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1h depois": {
+      "main": [
+        [
+          {
+            "node": "aguardar 1h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "aguardar 1h": {
+      "main": [
+        [
+          {
+            "node": "buscando na plahilha1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "enviar mensagem 1h depois": {
+      "main": [
+        [
+          {
+            "node": "email 1h depois",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "24h depois": {
+      "main": [
+        [
+          {
+            "node": "aguardar 24h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "aguardar 24h": {
+      "main": [
+        [
+          {
+            "node": "buscando na plahilha2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Typeform Trigger": {
+      "main": [
+        [
+          {
+            "node": "nicho black?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Nome e telefone para validar": {
+      "main": [
+        [
+          {
+            "node": "Formatando Nome e Telefone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatando Nome e Telefone": {
+      "main": [
+        [
+          {
+            "node": "Cadastrando na Audiência",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "filtrando data/hora": {
+      "main": [
+        [
+          {
+            "node": "agendou?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nicho black?": {
+      "main": [
+        [
+          {
+            "node": "concorda valor mensal1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "concorda valor mensal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "concorda valor mensal": {
+      "main": [
+        [
+          {
+            "node": "concorda valor mao de obra",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "concorda valor mao de obra": {
+      "main": [
+        [
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Monday.com",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "concorda valor mensal1": {
+      "main": [
+        [
+          {
+            "node": "concorda valor mao de obra1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "concorda valor mao de obra1": {
+      "main": [
+        [
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Monday.com",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "aguardar 5 min": {
+      "main": [
+        [
+          {
+            "node": "buscando na plahilha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "buscando na plahilha2": {
+      "main": [
+        [
+          {
+            "node": "filtrando data/hora1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "filtrando data/hora1": {
+      "main": [
+        [
+          {
+            "node": "agendou?2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agendou?2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "enviar mensagem 24h depois",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "5m depois": {
+      "main": [
+        [
+          {
+            "node": "aguardar 5 min",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-05-22T15:00:21.998Z",
+  "id": "1",
+  "meta": null,
+  "name": "recebendo dados do typeform (CONTA 1)",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "phone",
+              "value": "={{ $json.whatsapp }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $json.Nome }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $json.Sobrenome }}"
+            }
+          ]
+        }
+      },
+      "name": "Cadastrando na Audiência",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        360,
+        360
+      ],
+      "id": "7b84b5c8-c940-4ccb-a263-a28a2ed1be8b",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "948d0c01-6c29-4e82-992d-2598653c9cc4",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1500,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "value": "={{$now}}",
+        "dataPropertyName": "data-hora",
+        "custom": true,
+        "toFormat": "DD-MM-YYYY HH:mm",
+        "options": {
+          "fromTimezone": "America/Sao_Paulo"
+        }
+      },
+      "id": "97eb61b7-32eb-42ed-9091-400d1064e6ab",
+      "name": "Date & Time",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI",
+          "mode": "list",
+          "cachedResultName": "Agendamentos Calendly - GMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1739459961,
+          "mode": "list",
+          "cachedResultName": "leads_typeform",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit#gid=1739459961"
+        },
+        "columnToMatchOn": "E-mail",
+        "valueToMatchOn": "={{ $node['Typeform Trigger'].json['[field:01GMZN7P13DH458Z0CR9FBZJ0E], qual o seu melhor e-mail?'].toLowerCase() }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "ID BC",
+              "fieldValue": "={{ $json.id }}"
+            },
+            {
+              "column": "Nome",
+              "fieldValue": "={{ $json.full_name }}"
+            },
+            {
+              "column": "WhatsApp",
+              "fieldValue": "={{ $json.phone }}"
+            },
+            {
+              "column": "Data/hora",
+              "fieldValue": "={{ $node['Date & Time'].json['data-hora'] }}"
+            },
+            {
+              "column": "CONTA BC",
+              "fieldValue": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c74ddfd2-065c-43b8-940f-6bd4cf35d1e3",
+      "name": "Inserir/atualizar na planilha",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        600,
+        360
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": " gustavomagalhaes.digitalocean@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI",
+          "mode": "list",
+          "cachedResultName": "Agendamentos Calendly - GMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1739459961,
+          "mode": "list",
+          "cachedResultName": "leads_typeform",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit#gid=1739459961"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "E-mail",
+              "lookupValue": "={{ $node['Typeform Trigger'].json['[field:01GMZN7P13DH458Z0CR9FBZJ0E], qual o seu melhor e-mail?'].toLowerCase() }}"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "baa1b8ad-4d7b-4d2d-ab19-ca30ca993aa0",
+      "name": "buscando na plahilha",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1360,
+        360
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": " gustavomagalhaes.digitalocean@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json['Agendou?'] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "c77b31ed-74d4-4029-8680-897267ff93e7",
+      "name": "agendou?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "toEmail": "={{ $node['agendou?'].json.Email }}",
+        "text": "=",
+        "options": {}
+      },
+      "id": "8bdb7043-dbc4-4ed3-b70b-38ae45310e3b",
+      "name": "email 15m depois",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [
+        2120,
+        1040
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.zenvia.com/v2/channels/voice/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-TOKEN",
+              "value": "Gk43yDgwTWMPng6kAN1RbgHF3o2Rvxmz9duu"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"from\": \"1df62342-9408-4c90-8131-81db24ac95ff\",\n  \"to\": \"5571984207107\",\n  \"contents\": [\n    {\n      \"type\": \"call\",\n      \"audio\": [\n        {\n          \"type\": \"file\",\n          \"fileUrl\": \"https://github.com/KleyvisonVasconcelos/voz/raw/main/Teste%20voz%20envia%20(online-audio-converter.com).mp3\"\n        }\n      ]\n    }\n  ],\n  \"recordAudio\": false,\n  \"hangUpOnVoiceMail\": true\n}",
+        "options": {}
+      },
+      "id": "e7f41a61-6a8f-452f-8931-388aedfcf5a5",
+      "name": "ligação zenvia",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        3200,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI",
+          "mode": "list",
+          "cachedResultName": "Agendamentos Calendly - GMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1739459961,
+          "mode": "list",
+          "cachedResultName": "leads_typeform",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit#gid=1739459961"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "ID BC",
+              "lookupValue": "={{ $node['Cadastrando na Audiência'].json.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0ec215db-5c6e-4317-8b7c-5d4ff394766c",
+      "name": "buscando na plahilha1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        1900,
+        1260
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": " gustavomagalhaes.digitalocean@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json['Agendou?'] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "a5ba62f9-e5e3-40d7-bc74-9e24267f09c1",
+      "name": "agendou?1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2120,
+        1260
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "bc10faf3-42e4-47f0-b203-57cb6321a221",
+      "name": "1h depois",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        1260
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "20ae162b-2060-4b84-bd9b-a1b1951d1a5f",
+      "name": "aguardar 1h",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        1260
+      ],
+      "webhookId": "98725522-788f-4630-81bb-673159ea4bc1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"agendou?1\"].json[\"ID BC\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "="
+            }
+          ]
+        }
+      },
+      "name": "enviar mensagem 1h depois",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        2400,
+        1260
+      ],
+      "id": "cb3245bd-c156-47f5-9fc2-6c5e4f7401a8",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "maxTries": 5,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toEmail": "={{ $node['agendou?1'].json.Email }}",
+        "text": "=",
+        "options": {}
+      },
+      "id": "d8de6390-6577-4176-9de4-bb89815b3298",
+      "name": "email 1h depois",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [
+        2640,
+        1260
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "4d44d91d-a120-4129-a6f4-aa5182d04cc5",
+      "name": "24h depois",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2180,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "unit": "days"
+      },
+      "id": "ba17069f-57fc-46c8-94bb-b11909053feb",
+      "name": "aguardar 24h",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        2440,
+        640
+      ],
+      "webhookId": "98725522-788f-4630-81bb-673159ea4bc1"
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"agendou?2\"].json[\"ID BC\"] }}/send_flow/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "flow",
+              "value": "1680462"
+            }
+          ]
+        }
+      },
+      "name": "enviar mensagem 24h depois",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        3460,
+        640
+      ],
+      "id": "6578c056-9ef4-4d3a-99c8-de4d8f11cf55",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "maxTries": 5,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toEmail": "={{ $node['agendou?2'].json.Email }}",
+        "text": "=",
+        "options": {}
+      },
+      "id": "77268f73-d5ac-4102-b6c3-747c91617ddf",
+      "name": "email 24h depois",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [
+        2640,
+        1520
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "formId": "Xlz4C8WS"
+      },
+      "id": "e582084f-6fb7-40ac-884d-8c16b31fdc2d",
+      "name": "Typeform Trigger",
+      "type": "n8n-nodes-base.typeformTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1500,
+        360
+      ],
+      "webhookId": "a5ab9669-2c2a-4530-a740-06726f4a09d5",
+      "credentials": {
+        "typeformApi": {
+          "id": "1",
+          "name": "Typeform account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "telefone",
+              "value": "={{ $node['Typeform Trigger'].json['E qual é o seu telefone?'] }}"
+            },
+            {
+              "name": "nomeCompleto",
+              "value": "={{ $node['Typeform Trigger'].json['Olá, qual o seu nome?'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dfb9857a-74e7-44d5-bc0b-6cc3b141fb7d",
+      "name": "Nome e telefone para validar",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -80,
+        360
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter a string de nome completo do nó anterior\nconst nomeCompleto = items[0].json.nomeCompleto;\n\n// Função para separar o nome completo em nome e sobrenome\nfunction separarNomeSobrenome(nomeCompleto) {\n  // Verificar se o nome completo é uma string\n  if (typeof nomeCompleto !== 'string') {\n    throw new Error('O nome completo deve ser uma string.');\n  }\n\n  // Dividir o nome completo em palavras\n  const palavras = nomeCompleto.trim().split(' ');\n\n  // Verificar se há mais de uma palavra\n  if (palavras.length === 0) {\n    throw new Error('O nome completo deve conter pelo menos um nome.');\n  }\n\n  // Extrair o primeiro nome\n  const primeiroNome = palavras.shift();\n\n  // Extrair o sobrenome\n  const sobrenome = palavras.length > 0 ? palavras.join(' ') : '.';\n\n  // Formatar o nome e sobrenome com a primeira letra de cada palavra em maiúscula\n  const nomeFormatado = formatarNome(primeiroNome);\n  const sobrenomeFormatado = formatarNome(sobrenome);\n\n  return {\n    nome: nomeFormatado,\n    sobrenome: sobrenomeFormatado\n  };\n}\n\nfunction formatarNome(nome) {\n  return nome\n    .toLowerCase()\n    .split(' ')\n    .map((palavra) => palavra.charAt(0).toUpperCase() + palavra.slice(1))\n    .join(' ');\n}\n\n// Separar o nome completo em nome e sobrenome\nconst resultado = separarNomeSobrenome(nomeCompleto);\n\nvar whatsapp = items[0].json.telefone.replace(/\\D/g, '');\nvar ddd = whatsapp.slice(2,4);\nvar ddi = whatsapp.charAt(0);\nvar ddx = whatsapp.slice(0,2);\nvar length = whatsapp.length;\nif (length >= 12){\n  if (ddi == '+'){\n    ddi = whatsapp.slice(0,3);\n    whatsapp = parseInt(whatsapp.slice(3)).toString();\n  } else {\n    if (ddx == '55'){\n      whatsapp = parseInt(whatsapp.slice(2)).toString();\n      ddi = \"+55\";\n    } else {\n      whatsapp = parseInt(whatsapp).toString();\n      ddi = 'não informado';\n    }\n  }\n} else {\n  whatsapp = parseInt(whatsapp).toString();\n  ddi = 'não informado';\n}\n\nddd = whatsapp.slice(0,2);\nwhatsapp = whatsapp.slice(2);\nif (ddd > 28){\n  whatsapp = whatsapp.slice(-8);\n} else {\n  whatsapp = '9'+whatsapp.slice(-8);\n}\nvar whatsapp = '+55'+ddd+whatsapp;\n\n// Armazenar o nome e sobrenome nos campos desejados\nreturn {\n  json: {\n    Nome: resultado.nome,\n    Sobrenome: resultado.sobrenome,\n    NomeCompleto: resultado.nome+' '+resultado.sobrenome,\n    whatsapp\n  }\n};\n"
+      },
+      "id": "f652958e-e172-492d-8a15-267b95ce710d",
+      "name": "Formatando Nome e Telefone",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        140,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"Data/hora\"] }}",
+              "value2": "={{ $node['Date & Time'].json['data-hora'] }}"
+            }
+          ]
+        }
+      },
+      "id": "22937f8e-fbdb-40f6-b969-467cef1b91a3",
+      "name": "filtrando data/hora",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://voice-api.zenvia.com/audio",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Access-Token",
+              "value": "1a7e6f326c757c7d746e4643ec70d62a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\t\"numero_destino\": \"{{ $node[\"Formatando Nome e Telefone\"].json[\"whatsapp\"].slice(0,5) }}9{{ $node[\"Formatando Nome e Telefone\"].json[\"whatsapp\"].slice(-8) }}\",\n\t\"url_audio\": \"https://github.com/GustavoMagalhaesGMR/zenvia/raw/main/recuperacao%2015%20depois%20(online-audio-converter.com).mp3\",\n\t\"resposta_usuario\": false,\n\t\"gravar_audio\": false,\n\t\"detecta_caixa\": true,\n\t\"bina_inteligente\": true,\n\t\"chamada_verificada\": false,\n\t\"motivo_vcall\": 0\n}",
+        "options": {}
+      },
+      "id": "2878d5d8-4872-41e5-b9c7-6452ae3e366c",
+      "name": "ligação zenvia1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2180,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json['[field:01GMZN7P13DH458Z0CR9FBZJ0E], você trabalha com *nicho black*?'].toLowerCase() }}",
+              "operation": "contains",
+              "value2": "sim"
+            }
+          ]
+        }
+      },
+      "id": "ffb81c0e-46df-47ce-94bc-ddce70f040d5",
+      "name": "nicho black?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1220,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"Recomendamos um valor a partir de *R$25,00por dia (R$750,00 por mês)* para serem investidos nos anúncios, desconsiderando nossa mão de obra.\\n\\n Esse valor mínimo está de acordo com sua realidade hoje?\"] }}",
+              "operation": "contains",
+              "value2": "acordo"
+            }
+          ]
+        }
+      },
+      "id": "bc054cf8-78e7-4537-8276-e50c2b29d1c4",
+      "name": "concorda valor mensal",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"O investimento mínimo em nossa mão de obra é:\\n\\n*R$1.000,00/mês, no plano de 3 meses, ou R$1.200,00/mês no plano mensal.*\\n\\nSendo assim, o investimento mínimo necessário para todo o trabalho, é de *R$1.750,00.*\\n\\nEsse valor total por mês, te atende nesse momento?\"] }}",
+              "operation": "contains",
+              "value2": "acordo"
+            }
+          ]
+        }
+      },
+      "id": "d9a37bf7-71dc-4f85-a6b3-1a7f29b5ea8a",
+      "name": "concorda valor mao de obra",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -720,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"Recomendamos um valor a partir de *R$40,00 por dia* *(R$1200,00 por mês)* para serem investidos nos anúncios, desconsiderando nossa mão de obra.\n\n Esse valor mínimo está de acordo com sua realidade hoje?\"] }}",
+              "operation": "contains",
+              "value2": "acordo"
+            }
+          ]
+        }
+      },
+      "id": "c2c6cd46-f15f-4f5e-9b00-ca3bf64ba296",
+      "name": "concorda valor mensal1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"O investimento mínimo em nossa mão de obra é:\n\n*R$1.500,00 mensais/mês*\n\nIsso já incluso: \n\n-Gestor de tráfego \n-Análise de funil \n-Guia com os criativos\n-Estratégias bem definidas \n-Contingência\n\n*(Te explicamos melhor na nossa reunião)*\n\nSendo assim, o investimento mensal mínimo necessário, é de *R$2.700,00.*\n\nEsse valor total por mês, te atendemos nesse momento?\"] }}",
+              "operation": "contains",
+              "value2": "acordo"
+            }
+          ]
+        }
+      },
+      "id": "138fbe18-951e-468f-a099-5732e812b256",
+      "name": "concorda valor mao de obra1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -720,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "boardItem",
+        "boardId": "4573926687",
+        "groupId": "topics",
+        "name": "={{ $json[\"Olá, qual o seu nome?\"] }}",
+        "additionalFields": {
+          "columnValues": "={\n\t\"NUMERO\": \"{{ $json[\"E qual é o seu telefone?\"] }}\",\n\t\"EMAIL\": \"{{ $json[\"[field:01GMZN7P13DH458Z0CR9FBZJ0E], qual o seu melhor e-mail?\"] }}\",\n\t\"NICHO\": \"{{ $json[\"E o seu ramo/nicho de atuação? \"] }}\",\n\t\"COM O QUE ELE CONCORDOU\": \"concorda com valor mensal, mas não com valor de mão-de-obra\",\n\t\"VALOR TOTAL INICIAL PARA INVESTIMENTO\": \"{{ $json[\"*QUE PENA* que você não concordou com um dos nosso valores, mas isso não e nenhum empecilho para iniciar uma parceria com nosso time!\n\nQual *VALOR TOTAL* você acha que seria viável para a realidade da sua empresa, nesse investimento no online?\n \n\"] }}\"\n}"
+        }
+      },
+      "id": "211b6918-23d0-4d6b-92e8-8435b56bdd73",
+      "name": "Monday.com",
+      "type": "n8n-nodes-base.mondayCom",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        700
+      ],
+      "credentials": {
+        "mondayComApi": {
+          "id": "2",
+          "name": "Monday.com account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json[\"E-mail\"] }}",
+        "subject": "Reunião com a GMR Mídias",
+        "message": "=Olá, {{ $json[\"Nome\"].split(\" \")[0] }}. Tudo bem?\n\nSou o Gustavo e acabei de analisar o formulário que você preencheu. Como você concordou com os nossos valores, vamos agendar uma reunião para conversar melhor.\n\nClique no botão abaixo e agende sua reunião, no melhor dia e horário para você ⬇️ ⬇️ ⬇️\nhttps://calendly.com/gustavomagalhaes/35min",
+        "options": {}
+      },
+      "id": "d86be326-6a71-4df3-a939-e0ed3f54b45c",
+      "name": "Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        2180,
+        0
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "8",
+          "name": "gmrmidias@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://voice-api.zenvia.com/audio",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Access-Token",
+              "value": "1a7e6f326c757c7d746e4643ec70d62a"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\t\"numero_destino\": \"37999564376\",\n\t\"url_audio\": \"https://github.com/GustavoMagalhaesGMR/zenvia/raw/main/recuperacao%2015%20depois%20(online-audio-converter.com).mp3\",\n\t\"resposta_usuario\": false,\n\t\"gravar_audio\": false,\n\t\"detecta_caixa\": true,\n\t\"bina_inteligente\": true,\n\t\"chamada_verificada\": false,\n\t\"motivo_vcall\": 0\n}",
+        "options": {}
+      },
+      "id": "a54d92df-19fa-41c4-91e6-50f9ea920193",
+      "name": "ligação zenvia2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1580,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "minutes"
+      },
+      "id": "2d40a336-acf5-4421-9c33-65c8838786d7",
+      "name": "aguardar 5 min",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        360
+      ],
+      "webhookId": "98725522-788f-4630-81bb-673159ea4bc1"
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"agendou?\"].json[\"ID BC\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=Opa, {{ $json[\"Nome\"].split(\" \")[0] }}. Tudo bem?\n\nFicou alguma duvida no preenchimento do formulário ? \n\nSe quiser podemos conversar por aqui mesmo"
+            }
+          ]
+        }
+      },
+      "name": "enviar mensagem 5m depois",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        2180,
+        180
+      ],
+      "id": "fb0d7bfc-d793-42e5-93cb-825c867bab53",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "maxTries": 5,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI",
+          "mode": "list",
+          "cachedResultName": "Agendamentos Calendly - GMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1739459961,
+          "mode": "list",
+          "cachedResultName": "leads_typeform",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit#gid=1739459961"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "E-mail",
+              "lookupValue": "={{ $node['Typeform Trigger'].json['[field:01GMZN7P13DH458Z0CR9FBZJ0E], qual o seu melhor e-mail?'].toLowerCase() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "980336f1-1764-4a2e-9893-2c14823cec23",
+      "name": "buscando na plahilha2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        2680,
+        640
+      ],
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": " gustavomagalhaes.digitalocean@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json['Agendou?'] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "24173788-2604-40be-83e6-d8d84b98b8ff",
+      "name": "agendou?2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3200,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"Data/hora\"] }}",
+              "value2": "={{ $node['Date & Time'].json['data-hora'] }}"
+            }
+          ]
+        }
+      },
+      "id": "0ae3b5db-523f-444f-bb8a-14a048f8a714",
+      "name": "filtrando data/hora1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2920,
+        640
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "456910f9-b306-4344-809b-f18be0c410d3",
+      "name": "5m depois",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        880,
+        360
+      ]
+    }
+  ],
+  "pinData": {
+    "Typeform Trigger": [
+      {
+        "json": {
+          "Olá, qual o seu nome?": "teste",
+          "[field:01GMZN7P13DH458Z0CR9FBZJ0E], como você chegou neste formulário?": "Anúncios",
+          "Você sabe como funciona o tráfego pago?": "Não",
+          "[field:01GMZN7P13DH458Z0CR9FBZJ0E], qual o seu melhor e-mail?": "teste@teste.com",
+          "E qual é o seu telefone?": "+5566931298378",
+          "[field:01GMZN7P13DH458Z0CR9FBZJ0E], qual é o nome da sua empresa?": "teste",
+          "E o seu ramo/nicho de atuação? ": "teste",
+          "Tem site?": "SIM",
+          "Qual é o site da sua empresa?": "https://teste.com.br",
+          "E o Instagram da [field:eaf1509b-4121-42c0-871d-e7c615bab76a], qual é?": "tteste",
+          "Nos dê uma breve descrição da sua empresa.": "teste",
+          "Investe em Tráfego Pago atualmente?": "NÃO",
+          "[field:01GMZN7P13DH458Z0CR9FBZJ0E], você trabalha com *nicho black*?": "Não",
+          "Recomendamos um valor a partir de *R$25,00por dia (R$750,00 por mês)* para serem investidos nos anúncios, desconsiderando nossa mão de obra.\n\n Esse valor mínimo está de acordo com sua realidade hoje?": "Estou de acordo✅",
+          "O investimento mínimo em nossa mão de obra é:\n\n*R$1.000,00/mês, no plano de 3 meses, ou R$1.200,00/mês no plano mensal.*\n\nSendo assim, o investimento mínimo necessário para todo o trabalho, é de *R$1.750,00.*\n\nEsse valor total por mês, te atende nesse momento?": "Estou de acordo✅"
+        }
+      }
+    ]
+  },
+  "settings": {},
+  "staticData": {
+    "node:Typeform Trigger": {
+      "webhookId": "n8n-drwjkp3vail"
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-02-28T14:47:37.000Z",
+  "versionId": "4c8aee62-e155-4eb5-b3c7-cf48b1df20eb"
+}
