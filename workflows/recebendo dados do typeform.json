@@ -921,7 +921,7 @@
         "conditions": {
           "string": [
             {
-              "value1": "={{ $json[\"Recomendamos um valor a partir de *R$15,00por dia (R$450,00 por mês)* para serem investidos nos anúncios, desconsiderando nossa mão de obra.\n\n Esse valor mínimo está de acordo com sua realidade hoje?\"] }}",
+              "value1": "={{ $json[\"Recomendamos um valor a partir de *R$25,00por dia (R$750,00 por mês)* para serem investidos nos anúncios, desconsiderando nossa mão de obra.\\n\\n Esse valor mínimo está de acordo com sua realidade hoje?\"] }}",
               "operation": "contains",
               "value2": "acordo"
             }
@@ -942,7 +942,7 @@
         "conditions": {
           "string": [
             {
-              "value1": "={{ $json[\"O investimento mínimo em nossa mão de obra é:\n\n*R$1.000,00 mensais/mês.*\n\nIsso já incluso: \n\n-Gestor de tráfego \n-Análise de funil \n-Guia com os criativos\n-Estratégias bem definidas \n\n*(Te explicamos melhor na nossa reunião)*\n\nSendo assim, o investimento mínimo necessário para todo o trabalho, é de *R$1.450,00.*\n\nEsse valor total por mês, te atende nesse momento?\"] }}",
+              "value1": "={{ $json[\"O investimento mínimo em nossa mão de obra é:\\n\\n*R$1.000,00/mês, no plano de 3 meses, ou R$1.200,00/mês no plano mensal.*\\n\\nSendo assim, o investimento mínimo necessário para todo o trabalho, é de *R$1.750,00.*\\n\\nEsse valor total por mês, te atende nesse momento?\"] }}",
               "operation": "contains",
               "value2": "acordo"
             }
@@ -1230,29 +1230,33 @@
     "Typeform Trigger": [
       {
         "json": {
-          "Olá, qual o seu nome?": "José Francisco Cordeiro",
-          "Você sabe como funciona o tráfego pago?": "Não ❌",
-          "[field:01GMZN7P13DH458Z0CR9FBZJ0E], qual o seu melhor e-mail?": "josefranciscocordeiro5@gmail.com",
-          "E qual é o seu telefone?": "+5569993393452",
-          "E o seu ramo/nicho de atuação? ": "Apostas esportivas",
-          "Tem site?": "NÃO ❌",
-          "E o Instagram da sua empresa, qual é?": "@jose250817",
-          "Qual sua maior dificuldade hoje?": "Vender",
-          "Investe em Tráfego Pago atualmente?": "NÃO ❌",
-          "[field:01GMZN7P13DH458Z0CR9FBZJ0E], você trabalha com *nicho black*?": "Sim ✅",
-          "Recomendamos um valor a partir de *R$40,00 por dia* *(R$1200,00 por mês)* para serem investidos nos anúncios, desconsiderando nossa mão de obra.\n\n Esse valor mínimo está de acordo com sua realidade hoje?": "Estou de acordo✅",
-          "O investimento mínimo em nossa mão de obra é:\n\n*R$1.500,00 mensais/mês*\n\nIsso já incluso: \n\n-Gestor de tráfego \n-Análise de funil \n-Guia com os criativos\n-Estratégias bem definidas \n-Contingência\n\n*(Te explicamos melhor na nossa reunião)*\n\nSendo assim, o investimento mensal mínimo necessário, é de *R$2.700,00.*\n\nEsse valor total por mês, te atendemos nesse momento?": "Está fora da minha realidade ❌",
-          "*QUE PENA* que você não concordou com um dos nosso valores, mas isso não e nenhum empecilho para iniciar uma parceria com nosso time!\n\nQual *VALOR TOTAL* você acha que seria viável para a realidade da sua empresa, nesse investimento no online?\n \n": 10
+          "Olá, qual o seu nome?": "teste",
+          "[field:01GMZN7P13DH458Z0CR9FBZJ0E], como você chegou neste formulário?": "Anúncios",
+          "Você sabe como funciona o tráfego pago?": "Não",
+          "[field:01GMZN7P13DH458Z0CR9FBZJ0E], qual o seu melhor e-mail?": "teste@teste.com",
+          "E qual é o seu telefone?": "+5566931298378",
+          "[field:01GMZN7P13DH458Z0CR9FBZJ0E], qual é o nome da sua empresa?": "teste",
+          "E o seu ramo/nicho de atuação? ": "teste",
+          "Tem site?": "SIM",
+          "Qual é o site da sua empresa?": "https://teste.com.br",
+          "E o Instagram da [field:eaf1509b-4121-42c0-871d-e7c615bab76a], qual é?": "tteste",
+          "Nos dê uma breve descrição da sua empresa.": "teste",
+          "Investe em Tráfego Pago atualmente?": "NÃO",
+          "[field:01GMZN7P13DH458Z0CR9FBZJ0E], você trabalha com *nicho black*?": "Não",
+          "Recomendamos um valor a partir de *R$25,00por dia (R$750,00 por mês)* para serem investidos nos anúncios, desconsiderando nossa mão de obra.\n\n Esse valor mínimo está de acordo com sua realidade hoje?": "Estou de acordo✅",
+          "O investimento mínimo em nossa mão de obra é:\n\n*R$1.000,00/mês, no plano de 3 meses, ou R$1.200,00/mês no plano mensal.*\n\nSendo assim, o investimento mínimo necessário para todo o trabalho, é de *R$1.750,00.*\n\nEsse valor total por mês, te atende nesse momento?": "Estou de acordo✅"
         }
       }
     ]
   },
   "settings": {},
   "staticData": {
-    "node:Typeform Trigger": {}
+    "node:Typeform Trigger": {
+      "webhookId": "n8n-4vq7qrsretd"
+    }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-02-26T15:27:05.000Z",
-  "versionId": "79ee55d7-7127-4f6c-8a48-556bb371c75e"
+  "updatedAt": "2024-02-28T03:47:32.000Z",
+  "versionId": "5b1bd48b-486b-4418-86f4-40044a40c5dd"
 }
