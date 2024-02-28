@@ -5,11 +5,6 @@
       "main": [
         [
           {
-            "node": "atualizar na planilha typeform",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "aguardar 1 minuto",
             "type": "main",
             "index": 0
@@ -621,6 +616,10 @@
             {
               "column": "Cancelado",
               "fieldValue": "={{ $node['Calendly Trigger1'].json.payload.event.canceled }}"
+            },
+            {
+              "column": "CONTA BC",
+              "fieldValue": "1"
             }
           ]
         },
@@ -863,7 +862,7 @@
   "settings": {},
   "staticData": {
     "node:Calendly Trigger1": {
-      "webhookId": 4620360
+      "webhookId": 4623499
     },
     "node:Calendly Trigger": {
       "webhookId": 3901913
@@ -871,6 +870,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-02-28T17:00:30.000Z",
-  "versionId": "bee921cd-e572-4cc3-b06d-7a46d4e1f214"
+  "updatedAt": "2024-02-28T20:33:30.000Z",
+  "versionId": "cf863f2e-661a-4b1e-a5fb-bb184ade91f1"
 }
