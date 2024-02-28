@@ -1,0 +1,875 @@
+{
+  "active": false,
+  "connections": {
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "aguardar 1 minuto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data início1": {
+      "main": [
+        [
+          {
+            "node": "Hora início1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hora início1": {
+      "main": [
+        [
+          {
+            "node": "Hora término1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hora término1": {
+      "main": [
+        [
+          {
+            "node": "Lembrete 2h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Mensagem Cancelamento lead2": {
+      "main": [
+        [
+          {
+            "node": "Enviar e-mail1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Número para validar telefone1": {
+      "main": [
+        [
+          {
+            "node": "Validar Telefone1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lembrete 2h": {
+      "main": [
+        [
+          {
+            "node": "Formatar 2h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatar 2h": {
+      "main": [
+        [
+          {
+            "node": "Número para validar telefone1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separando nome e sobrenome": {
+      "main": [
+        [
+          {
+            "node": "separando nome e sobrenome1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar Telefone1": {
+      "main": [
+        [
+          {
+            "node": "separando nome e sobrenome",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "separando nome e sobrenome1": {
+      "main": [
+        [
+          {
+            "node": "Cadastrando na Audiência1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cadastrando na Audiência1": {
+      "main": [
+        [
+          {
+            "node": "Inserir/atualizar na planilha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "aguardar 1 minuto": {
+      "main": [
+        [
+          {
+            "node": "Enviar Mensagem1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inserir/atualizar na planilha": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Mensagem1": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calendly Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Data início1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-02-28T20:29:58.435Z",
+  "id": "0bX5NCEiXGmsB4A9",
+  "meta": null,
+  "name": "recebendo dados calendly (CONTA 2)",
+  "nodes": [
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{$node[\"Calendly Trigger1\"].json[\"event\"]}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "invitee.created"
+            },
+            {
+              "value2": "invitee.canceled",
+              "output": 1
+            }
+          ]
+        }
+      },
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        3920,
+        460
+      ],
+      "id": "16487cc9-9a79-42b8-a060-7f12b8623e81"
+    },
+    {
+      "parameters": {
+        "scope": "organization",
+        "events": [
+          "invitee.created",
+          "invitee.canceled"
+        ]
+      },
+      "name": "Calendly Trigger1",
+      "type": "n8n-nodes-base.calendlyTrigger",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        460
+      ],
+      "webhookId": "a1d08d19-0898-49b9-8851-3053860bb225",
+      "id": "6074a659-da2c-4b63-8d57-737614efa650",
+      "credentials": {
+        "calendlyApi": {
+          "id": "3",
+          "name": "Calendly account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "value": "={{$json[\"payload\"][\"event\"][\"start_time\"]}}",
+        "dataPropertyName": "data_inicio",
+        "custom": true,
+        "toFormat": "DD/MM/YYYY",
+        "options": {
+          "toTimezone": "America/Sao_Paulo"
+        }
+      },
+      "name": "Data início1",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        460
+      ],
+      "id": "855a13c4-591b-4d98-b12e-44f73dc0349c"
+    },
+    {
+      "parameters": {
+        "value": "={{$json[\"payload\"][\"event\"][\"start_time\"]}}",
+        "dataPropertyName": "hora_inicio",
+        "custom": true,
+        "toFormat": "HH:mm",
+        "options": {
+          "toTimezone": "America/Sao_Paulo"
+        }
+      },
+      "name": "Hora início1",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        460
+      ],
+      "id": "d25605c5-faba-4721-b4d4-f1ea5abb1f3c"
+    },
+    {
+      "parameters": {
+        "value": "={{$json[\"payload\"][\"event\"][\"end_time\"]}}",
+        "dataPropertyName": "hora_término",
+        "custom": true,
+        "toFormat": "HH:mm",
+        "options": {
+          "toTimezone": "America/Sao_Paulo"
+        }
+      },
+      "name": "Hora término1",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        1960,
+        460
+      ],
+      "id": "1c7d7f82-c50a-4286-a645-51e6bf6977f4"
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "phone",
+              "value": "={{ $node['Validar Telefone1'].json.whatsapp }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $json.Nome }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $json.Sobrenome }}"
+            }
+          ]
+        }
+      },
+      "name": "Cadastrando na Audiência1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        3440,
+        460
+      ],
+      "id": "b217728a-40ae-4c7d-95ce-e83995a84e05",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"Cadastrando na Audiência1\"].json[\"id\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=Excelente, *{{ $node[\"separando nome e sobrenome1\"].json[\"Nome\"] }}*.\nSua reunião está agendada para às *{{$node[\"Hora início1\"].json[\"hora_inicio\"]}}* do dia *{{$node[\"Data início1\"].json[\"data_inicio\"]}}*. Você já deve ter recebido no e-mail sobre.\n\nReforçando a importância de todos os sócios (se houver) envolvidos participarem da nossa reunião. É de extrema importância para a estratégia em conjunto, visando o sucesso do seu negócio.\n\nQualquer duvida estamos a disposição. Até lá! "
+            }
+          ]
+        }
+      },
+      "name": "Enviar Mensagem1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        4620,
+        380
+      ],
+      "id": "337db0e3-dce9-49b6-b2cc-8c82e48c6ce9",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{{ $node[\"Cadastrando na Audiência1\"].json[\"id\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=Olá, {{ $node[\"separando nome e sobrenome1\"].json[\"Nome\"] }}. Recebemos seu pedido de cancelamento da nossa reunião agendada para *{{$node[\"Data início1\"].json[\"data_inicio\"]}}* às *{{$node[\"Hora início1\"].json[\"hora_inicio\"]}}*.\n\nCaso você tenha feito um reagendamento, não se preocupe. Você receberá a confirmação do novo dia e novo horário logo em seguida.\n\nCaso contrário, você pode remarcar apenas clicando aqui\nhttps://calendly.com/gustavomagalhaes/35min\n\nSerá um prazer poder apresentar os pontos que levantamos e que acredito que vai te ajudar a organizar seu marketing digital e a alcançar seus objetivos.\n\nObrigado e até breve!"
+            }
+          ]
+        }
+      },
+      "name": "Enviar Mensagem Cancelamento lead2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        4580,
+        1160
+      ],
+      "id": "5d4cda6f-815c-4ae9-b6cb-b42f49c3cae2",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "maxTries": 5,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/3961661/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=*CANCELAMENTO DE REUNIÃO*\n\nNome: {{$node[\"Google Sheets3\"].json[\"Nome\"]}}\nTelefone: {{$node[\"Google Sheets3\"].json[\"WhatsApp\"]}}\nInstagram e Site: {{$node[\"Google Sheets3\"].json[\"Instagram e Site\"]}}\n\nCancelamento confirmado de Reunião com Marcelo Zouki da MZK Mídia em {{$node[\"Google Sheets3\"].json[\"Data\"]}} às {{$node[\"Google Sheets3\"].json[\"Hora Início\"]}}."
+            }
+          ]
+        }
+      },
+      "name": "Enviar Mensagem Cancelamento lead3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        5120,
+        1440
+      ],
+      "id": "fd640a32-211d-478b-8854-0f562e4e3052",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "telefone",
+              "value": "={{ $json.payload.questions_and_answers[0].answer }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ad98a759-3f7a-40ed-bb78-da3b5a63f9c1",
+      "name": "Número para validar telefone1",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2580,
+        460
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "functionCode": "var whatsapp = items[0].json.telefone.replace(/\\D/g, '');\nvar ddd = whatsapp.slice(2,4);\nvar ddi = whatsapp.charAt(0);\nvar ddx = whatsapp.slice(0,2);\nvar length = whatsapp.length;\nif (length >= 12){\n  if (ddi == '+'){\n    ddi = whatsapp.slice(0,3);\n    whatsapp = parseInt(whatsapp.slice(3)).toString();\n  } else {\n    if (ddx == '55'){\n      whatsapp = parseInt(whatsapp.slice(2)).toString();\n      ddi = \"+55\";\n    } else {\n      whatsapp = parseInt(whatsapp).toString();\n      ddi = 'não informado';\n    }\n  }\n} else {\n  whatsapp = parseInt(whatsapp).toString();\n  ddi = 'não informado';\n}\n\nddd = whatsapp.slice(0,2);\nwhatsapp = whatsapp.slice(2);\nif (ddd > 28){\n  whatsapp = whatsapp.slice(-8);\n} else {\n  whatsapp = '9'+whatsapp.slice(-8);\n}\nvar whatsapp = '+55'+ddd+whatsapp;\n\nreturn [\n  {\n    json: {\n      ddi,\n      ddd,\n      whatsapp   \n    }\n  }\n];"
+      },
+      "id": "56b7ec86-46ba-44c1-9b38-e33bb6f85f00",
+      "name": "Validar Telefone1",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        2780,
+        460
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "action": "calculate",
+        "value": "={{$json[\"hora_inicio\"]}}",
+        "operation": "subtract",
+        "duration": 2,
+        "timeUnit": "hours",
+        "dataPropertyName": "Lembrete2h",
+        "options": {
+          "fromFormat": "HH:mm"
+        }
+      },
+      "name": "Lembrete 2h",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        2160,
+        460
+      ],
+      "id": "d849b2a0-579a-4c46-9b96-7fe54c72ffb8"
+    },
+    {
+      "parameters": {
+        "value": "={{$json[\"Lembrete2h\"]}}",
+        "dataPropertyName": "Lembrete2h",
+        "custom": true,
+        "toFormat": "HH:mm",
+        "options": {}
+      },
+      "name": "Formatar 2h",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        2360,
+        460
+      ],
+      "id": "d9acd939-ea72-42a6-a699-761cee1a5639"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "nomeCompleto",
+              "value": "={{ $node['Calendly Trigger1'].json.payload.invitee.name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6fd45e28-91a8-480c-b365-80965b2fe5ac",
+      "name": "separando nome e sobrenome",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        3000,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obter a string de nome completo do nó anterior\nconst nomeCompleto = items[0].json.nomeCompleto;\n\n// Função para separar o nome completo em nome e sobrenome\nfunction separarNomeSobrenome(nomeCompleto) {\n  // Verificar se o nome completo é uma string\n  if (typeof nomeCompleto !== 'string') {\n    throw new Error('O nome completo deve ser uma string.');\n  }\n\n  // Dividir o nome completo em palavras\n  const palavras = nomeCompleto.trim().split(' ');\n\n  // Verificar se há mais de uma palavra\n  if (palavras.length === 0) {\n    throw new Error('O nome completo deve conter pelo menos um nome.');\n  }\n\n  // Extrair o primeiro nome\n  const primeiroNome = palavras.shift();\n\n  // Extrair o sobrenome\n  const sobrenome = palavras.length > 0 ? palavras.join(' ') : '.';\n\n  // Formatar o nome e sobrenome com a primeira letra de cada palavra em maiúscula\n  const nomeFormatado = formatarNome(primeiroNome);\n  const sobrenomeFormatado = formatarNome(sobrenome);\n\n  return {\n    nome: nomeFormatado,\n    sobrenome: sobrenomeFormatado\n  };\n}\n\nfunction formatarNome(nome) {\n  return nome\n    .toLowerCase()\n    .split(' ')\n    .map((palavra) => palavra.charAt(0).toUpperCase() + palavra.slice(1))\n    .join(' ');\n}\n\n// Separar o nome completo em nome e sobrenome\nconst resultado = separarNomeSobrenome(nomeCompleto);\n\n// Armazenar o nome e sobrenome nos campos desejados\nreturn {\n  json: {\n    Nome: resultado.nome,\n    Sobrenome: resultado.sobrenome\n  }\n};\n"
+      },
+      "id": "b50ad43a-9198-4d19-a37b-1e1c28a44590",
+      "name": "separando nome e sobrenome1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        3200,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "unit": "minutes"
+      },
+      "name": "aguardar 1 minuto",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        4380,
+        380
+      ],
+      "webhookId": "083300d2-ca4e-4c5c-9f4a-cb59b3c111ca",
+      "id": "db2727d1-ab29-4a03-a244-1190311c7626"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI",
+          "mode": "list",
+          "cachedResultName": "Agendamentos Calendly - GMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Agendamentos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit#gid=0"
+        },
+        "columnToMatchOn": "ID",
+        "valueToMatchOn": "={{ $node['Calendly Trigger1'].json.payload.invitee.uuid }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "ID BC",
+              "fieldValue": "={{ $json.id }}"
+            },
+            {
+              "column": "Nome",
+              "fieldValue": "={{ $json.full_name }}"
+            },
+            {
+              "column": "Email",
+              "fieldValue": "={{ $node['Calendly Trigger1'].json.payload.invitee.email }}"
+            },
+            {
+              "column": "WhatsApp",
+              "fieldValue": "={{ $json.phone }}"
+            },
+            {
+              "column": "Data",
+              "fieldValue": "={{ $node['Formatar 2h'].json.data_inicio }}"
+            },
+            {
+              "column": "Hora Início",
+              "fieldValue": "={{ $node['Formatar 2h'].json.hora_inicio }}"
+            },
+            {
+              "column": "Lembrete 2h antes",
+              "fieldValue": "={{ $node['Formatar 2h'].json.data_inicio }} {{ $node['Formatar 2h'].json.Lembrete2h }}"
+            },
+            {
+              "column": "Cancelado em",
+              "fieldValue": "={{ $node['Calendly Trigger1'].json.payload.event.canceled_at }}"
+            },
+            {
+              "column": "Cancelado",
+              "fieldValue": "={{ $node['Calendly Trigger1'].json.payload.event.canceled }}"
+            },
+            {
+              "column": "CONTA BC",
+              "fieldValue": "2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "239596b9-dd15-4679-8b35-76238526a7ed",
+      "name": "Inserir/atualizar na planilha",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        3680,
+        460
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": " gustavomagalhaes.digitalocean@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "teste",
+        "toEmail": "={{ $node['Calendly Trigger1'].json.payload.invitee.email }}",
+        "subject": "={{ $node['Calendly Trigger1'].json.payload.event_type.name }}",
+        "text": "=Excelente, *{{ $node[\"separando nome e sobrenome1\"].json[\"Nome\"] }}*.\nSua reunião está agendada para às *{{$node[\"Hora início1\"].json[\"hora_inicio\"]}}* do dia *{{$node[\"Data início1\"].json[\"data_inicio\"]}}*. Você já deve ter recebido SMS e WahsApp sobre.\n\nReforçando a importância de todos os sócios (se houver) envolvidos participarem da nossa reunião. É de extrema importância para a estratégia em conjunto, visando o sucesso do seu negócio\n\nAtt; GMR Mídias.\n\n\n_Qualquer dúvida estamos a disposição, até lá!_",
+        "options": {}
+      },
+      "id": "bc103126-b17a-4472-9efd-0fad91e43eb4",
+      "name": "Enviar e-mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [
+        5480,
+        1080
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "fromEmail": "teste",
+        "toEmail": "={{ $node['Calendly Trigger1'].json.payload.invitee.email }}",
+        "text": "=Olá, {{ $node[\"separando nome e sobrenome1\"].json[\"Nome\"] }}. Recebemos seu pedido de cancelamento da nossa reunião agendada para *{{$node[\"Data início1\"].json[\"data_inicio\"]}}* às *{{$node[\"Hora início1\"].json[\"hora_inicio\"]}}*.\n\nCaso você tenha feito um reagendamento, não se preocupe. Você receberá a confirmação do novo dia e novo horário logo em seguida.\n\nCaso contrário, você pode remarcar apenas clicando aqui\nhttps://calendly.com/gustavomagalhaes/35min\n\nSerá um prazer poder apresentar os pontos que levantamos e que acredito que vai te ajudar a organizar seu marketing digital e a alcançar seus objetivos.\n\nObrigado e até breve!",
+        "options": {}
+      },
+      "id": "67bd228c-71dd-41f5-b5ee-0ae57338ef8d",
+      "name": "Enviar e-mail1",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [
+        4840,
+        1160
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "boardItem",
+        "boardId": "4467517082",
+        "groupId": "novo_grupo",
+        "name": "={{ $json.payload.invitee.name }}",
+        "additionalFields": {
+          "columnValues": "={\n\t\"NUMERO\": \"{{ $node[\"Calendly Trigger1\"].json[\"payload\"][\"questions_and_answers\"][0][\"answer\"] }}\",\n\t\"EMAIL\": \"{{ $node[\"Calendly Trigger1\"].json[\"payload\"][\"invitee\"][\"email\"] }}\",\n\t\"DATA E HORA REUNIÃO\": \"{{ $node[\"Calendly Trigger1\"].json[\"payload\"][\"event\"][\"invitee_start_time\"].slice(8,10) }}/{{ $node[\"Calendly Trigger1\"].json[\"payload\"][\"event\"][\"invitee_start_time\"].slice(5,7) }}/{{ $node[\"Calendly Trigger1\"].json[\"payload\"][\"event\"][\"invitee_start_time\"].slice(0,4) }} {{ $node[\"Calendly Trigger1\"].json[\"payload\"][\"event\"][\"invitee_start_time\"].slice(11,16) }}\"\n}"
+        }
+      },
+      "id": "f37472f3-d42d-4406-b0be-1fa344205712",
+      "name": "Monday.com",
+      "type": "n8n-nodes-base.mondayCom",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        1080
+      ],
+      "credentials": {
+        "mondayComApi": {
+          "id": "2",
+          "name": "Monday.com account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI",
+          "mode": "list",
+          "cachedResultName": "Agendamentos Calendly - GMR",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1739459961,
+          "mode": "list",
+          "cachedResultName": "leads_typeform",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/126PwxIZBvTRZ7izBzFb7hc2JA0TGwRdvW3qkBuuGRbI/edit#gid=1739459961"
+        },
+        "columnToMatchOn": "E-mail",
+        "valueToMatchOn": "={{ $node['Calendly Trigger1'].json.payload.invitee.email.toLowerCase() }}",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "Agendou?",
+              "fieldValue": "✅"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "eb2edd76-5d12-41ca-b783-a2d150906d58",
+      "name": "atualizar na planilha typeform",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [
+        4140,
+        160
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": " gustavomagalhaes.digitalocean@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $node['Calendly Trigger1'].json.payload.invitee.email }}",
+        "subject": "={{ $node['Calendly Trigger1'].json.payload.event_type.name }}",
+        "message": "=Excelente, {{ $node[\"separando nome e sobrenome1\"].json[\"Nome\"] }}.\nSua reunião está agendada para às {{$node[\"Hora início1\"].json[\"hora_inicio\"]}} do dia {{$node[\"Data início1\"].json[\"data_inicio\"]}}. Você já deve ter recebido SMS e WhatsApp sobre.\n\nReforçando a importância de todos os sócios (se houver) envolvidos participarem da nossa reunião. É de extrema importância para a estratégia em conjunto, visando o sucesso do seu negócio\n\nAtt; GMR Mídias.\n\n\nQualquer dúvida estamos a disposição. Até lá!",
+        "options": {}
+      },
+      "id": "d9778878-1fc7-41d5-8e56-58f13947d709",
+      "name": "Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        4860,
+        380
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "8",
+          "name": "gmrmidias@gmail.com"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Calendly Trigger1": [
+      {
+        "json": {
+          "event": "invitee.created",
+          "payload": {
+            "event_type": {
+              "uuid": "f78781d2-aa39-413f-9bf5-6298f38c2842",
+              "kind": "One-on-One",
+              "slug": "35min",
+              "name": "Reunião de Pré Contratação",
+              "duration": 30,
+              "owner": {
+                "type": "users",
+                "uuid": "f1af532c-1986-41fa-bce4-311110e3ff1c"
+              }
+            },
+            "event": {
+              "uuid": "4a886a77-ae8b-4b40-b7b0-e38d353da1be",
+              "assigned_to": [
+                "Gustavo Magalhaes Ramalho "
+              ],
+              "extended_assigned_to": [
+                {
+                  "name": "Gustavo Magalhaes Ramalho ",
+                  "email": "gustavomagalhaesramalhi999@gmail.com",
+                  "primary": true
+                }
+              ],
+              "start_time": "2023-07-13T18:00:00-03:00",
+              "start_time_pretty": "06:00pm - Thursday, July 13, 2023",
+              "invitee_start_time": "2023-07-13T18:00:00-03:00",
+              "invitee_start_time_pretty": "06:00pm - Thursday, July 13, 2023",
+              "end_time": "2023-07-13T18:30:00-03:00",
+              "end_time_pretty": "06:30pm - Thursday, July 13, 2023",
+              "invitee_end_time": "2023-07-13T18:30:00-03:00",
+              "invitee_end_time_pretty": "06:30pm - Thursday, July 13, 2023",
+              "created_at": "2023-07-13T16:43:32-03:00",
+              "location": "https://calendly.com/events/4a886a77-ae8b-4b40-b7b0-e38d353da1be/google_meet",
+              "canceled": false,
+              "canceler_name": null,
+              "cancel_reason": null,
+              "canceled_at": null
+            },
+            "invitee": {
+              "uuid": "3137bae0-e0f4-45a1-87f3-e8365a1ba1de",
+              "first_name": "Kaique",
+              "last_name": "Rodrigues",
+              "name": "Kaique Rodrigues",
+              "email": "kleyvisonvasconcelos@gmail.com",
+              "text_reminder_number": "+55 17 99600-2708",
+              "timezone": "America/Sao_Paulo",
+              "created_at": "2023-07-13T16:43:32-03:00",
+              "is_reschedule": false,
+              "payments": [],
+              "canceled": false,
+              "canceler_name": null,
+              "cancel_reason": null,
+              "canceled_at": null
+            },
+            "questions_and_answers": [
+              {
+                "question": "Adicione o mesmo número de telefone preenchido no formulário da página anterior",
+                "answer": "+55 17 99600-2708"
+              }
+            ],
+            "questions_and_responses": {
+              "1_question": "Adicione o mesmo número de telefone preenchido no formulário da página anterior",
+              "1_response": "+55 17 99600-2708"
+            },
+            "tracking": {
+              "utm_campaign": null,
+              "utm_source": null,
+              "utm_medium": null,
+              "utm_content": null,
+              "utm_term": null,
+              "salesforce_uuid": null
+            },
+            "old_event": null,
+            "old_invitee": null,
+            "new_event": null,
+            "new_invitee": null
+          },
+          "time": "2023-07-13T19:43:32Z"
+        }
+      }
+    ]
+  },
+  "settings": {},
+  "staticData": {
+    "node:Calendly Trigger1": {
+      "webhookId": 4620360
+    },
+    "node:Calendly Trigger": {
+      "webhookId": 3901913
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-02-28T20:34:29.000Z",
+  "versionId": "109c4bff-58f5-4c48-b76d-aff6f5c8bcfa"
+}
