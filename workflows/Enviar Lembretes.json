@@ -43,7 +43,7 @@
       "main": [
         [
           {
-            "node": "enviar mensagem 2h antes",
+            "node": "Switch1",
             "type": "main",
             "index": 0
           }
@@ -87,7 +87,7 @@
       "main": [
         [
           {
-            "node": "enviar mensagem 30m",
+            "node": "Switch",
             "type": "main",
             "index": 0
           }
@@ -148,11 +148,71 @@
           }
         ]
       ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "enviar mensagem 30m",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "enviar mensagem 30m1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "enviar mensagem 30m1": {
+      "main": [
+        [
+          {
+            "node": "Gmail1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "enviar mensagem 2h antes",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "enviar mensagem 2h antes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "enviar mensagem 2h antes1": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-05-30T01:57:22.913Z",
   "id": "3",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "Enviar Lembretes",
   "nodes": [
     {
@@ -174,8 +234,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
-        40,
-        380
+        -80,
+        540
       ]
     },
     {
@@ -286,8 +346,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        1200,
-        380
+        1340,
+        280
       ],
       "id": "f9d7c1ce-3789-4fa4-976e-9473baeff3d9",
       "retryOnFail": true,
@@ -296,7 +356,7 @@
       "credentials": {
         "httpHeaderAuth": {
           "id": "4",
-          "name": "BC GMR"
+          "name": "BC GMR (1)"
         }
       }
     },
@@ -334,8 +394,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        1700,
-        380
+        1800,
+        360
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -356,8 +416,8 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2,
       "position": [
-        1460,
-        380
+        1580,
+        360
       ],
       "credentials": {
         "gmailOAuth2": {
@@ -400,7 +460,7 @@
       "typeVersion": 3,
       "position": [
         680,
-        660
+        780
       ],
       "retryOnFail": true,
       "maxTries": 5,
@@ -429,7 +489,7 @@
       "typeVersion": 1,
       "position": [
         1140,
-        660
+        780
       ]
     },
     {
@@ -466,8 +526,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 3,
       "position": [
-        1920,
-        660
+        2140,
+        780
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -488,8 +548,8 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2,
       "position": [
-        1680,
-        660
+        1900,
+        780
       ],
       "credentials": {
         "gmailOAuth2": {
@@ -521,8 +581,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        1420,
-        660
+        1640,
+        700
       ],
       "id": "b4aa99f3-25f5-4281-b945-d6998bc63e08",
       "retryOnFail": true,
@@ -531,7 +591,7 @@
       "credentials": {
         "httpHeaderAuth": {
           "id": "4",
-          "name": "BC GMR"
+          "name": "BC GMR (1)"
         }
       }
     },
@@ -550,7 +610,7 @@
       "typeVersion": 1,
       "position": [
         260,
-        660
+        780
       ]
     },
     {
@@ -569,7 +629,7 @@
       "typeVersion": 1,
       "position": [
         460,
-        660
+        780
       ]
     },
     {
@@ -589,8 +649,208 @@
       "typeVersion": 1,
       "position": [
         900,
-        660
+        780
       ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json['CONTA BC'] }}",
+                    "rightValue": "1",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "01"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "04ab9e18-f692-4bc6-87e8-8d0204392b3e",
+                    "leftValue": "={{ $json['CONTA BC'] }}",
+                    "rightValue": "2",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "02"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c83efc23-578a-4f58-8b92-187fe6e91633",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        1380,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"não é cancelado?1\"].json[\"ID BC\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=*{{$node[\"não é cancelado?1\"].json[\"Nome\"].split(\" \")[0]}}*, tudo bem?\n\nNossa reunião é daqui a 30 minutos ⏱️.\n\nDaqui a pouco te encaminho o link da reunião."
+            }
+          ]
+        }
+      },
+      "name": "enviar mensagem 30m1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        880
+      ],
+      "id": "7f95eb12-e112-4ee0-a06e-da038284d036",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "maxTries": 5,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "qMZBICYuSfJaYMIV",
+          "name": "BC GMR (2)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json['CONTA BC'] }}",
+                    "rightValue": "1",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "01"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "04ab9e18-f692-4bc6-87e8-8d0204392b3e",
+                    "leftValue": "={{ $json['CONTA BC'] }}",
+                    "rightValue": "2",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "02"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e22c7536-9b82-432f-8550-38173bdd7bbd",
+      "name": "Switch1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        1120,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"não é cancelado?\"].json[\"ID BC\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=*{{$node[\"não é cancelado?\"].json[\"Nome\"].split(\" \")[0]}}*, tudo bem?\n\nNossa reunião é daqui 2 horas ⏱️.\n\n🤝 Contamos com a sua presença pontual e engajada, mas fique tranquilo, vamos te avisar um pouco antes.\n\nTe enviaremos o link da reunião aqui pelo WhatsApp."
+            }
+          ]
+        }
+      },
+      "name": "enviar mensagem 2h antes1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        460
+      ],
+      "id": "f5875d54-a72e-40a5-bf2e-61137af1b864",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "maxTries": 5,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "BC GMR (1)"
+        }
+      }
     }
   ],
   "pinData": {
@@ -635,6 +895,7 @@
           "row_number": 61,
           "ID": "0d58f3ce-d58a-44b9-8987-bf5496c51c6c",
           "ID BC": 201334542,
+          "CONTA BC": "1",
           "Nome": "Lucio .",
           "Email": "lucio.junior.mkt@hotmail.com",
           "WhatsApp": "+554192171774",
@@ -653,6 +914,7 @@
           "row_number": 242,
           "ID": "0a9b2086-fced-40e4-89de-ac7beb63e991",
           "ID BC": 221054856,
+          "CONTA BC": "1",
           "Nome": "Andresa .",
           "Email": "andresatrdgs18@gmail.com",
           "WhatsApp": "+553488107824",
@@ -671,6 +933,7 @@
           "row_number": 243,
           "ID": "910263dc-529d-48d8-b821-3724091edc6f",
           "ID BC": 221067426,
+          "CONTA BC": "1",
           "Nome": "Ricardo .",
           "Email": "ricardopereiradacosta21@gmail.com",
           "WhatsApp": "+554691313762",
@@ -689,6 +952,7 @@
           "row_number": 244,
           "ID": "17c55d65-591b-4353-8acb-a12dbf45e25b",
           "ID BC": 221078641,
+          "CONTA BC": "2",
           "Nome": "Maykow .",
           "Email": "maykow.alexandre@icloud.com",
           "WhatsApp": "+558381518234",
@@ -716,6 +980,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2023-07-21T12:31:44.000Z",
-  "versionId": "0f9bb18c-14db-4ec5-bbb0-f7e4e4de5430"
+  "updatedAt": "2024-02-29T19:13:37.000Z",
+  "versionId": "68ae2fe9-cc96-4400-8a86-7391e2b0fc40"
 }
